@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form  action ="/quote" method ="post">
+        
+        <div class ="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="symbol" type="text"> 
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+<script>
+function ajax_request(input){
+    if (input == "":)
+    return ;
+    
+    //create a nre ajax object
+    ajax.onreadystatechange = function(){
+        if(ajax.readystate == 4 && ajax.status == 200)
+        {
+    }
+}
+</script>
+{% endblock %}

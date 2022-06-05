@@ -1,0 +1,29 @@
+"""
+    if len(sys.argv) != 3:
+        sys.exit("Usage: python dna.py data.csv sequence.txt")
+    # Read database into memory from file
+    with open(sys.argv[1]) as file:
+        reader = csv.DictReader(file)
+        for data in reader:
+            print(data["name"])
+            
+    # Read DNA sequence into memory from file
+    with open(sys.argv[2]) as file:
+        reader = csv.DictReader(file)
+        for data in reader:
+            print(data["name"])
+            
+    #data_file = open(f"{sys.argv[1]}", "r")
+    #data_file_data = data_file.read()
+    with data_file:
+        reader = csv.DictReader(data_file)
+        for row in reader:
+            print(row)
+    #print(data_file_data)
+    
+    # Open DNA sequence data file 
+    sequence_file = open(f"{sys.argv[2]}", "r")
+    sequence_file_data = sequence_file.read()
+    #print(sequence_file_data)
+    
+"""

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <form action ="/buy" method ="post">
+        <div class ="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="symbol" type="text"> 
+        </div>
+        <div class ="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="number"> 
+        </div>
+        <input id = "time" type="hidden" name="local_time" value ="" />
+        <button class="btn btn-primary" type="submit">Buy</button>
+        <script>
+        let local_time = new Date().toLocaleString();
+        document.getElementById("time").value = local_time;
+        </script>
+    </form>
+
+{% endblock %}

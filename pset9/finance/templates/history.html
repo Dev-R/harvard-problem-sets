@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+Sell
+{% endblock %}
+{% block main %}
+<table class = 'table'>
+   <thead>
+      <tr>
+         <th scope="col">Symbol</th>
+         <th scope="col">Shares</th>
+         <th scope="col">Price</th>
+         <th scope="col">Transacted</th>
+   </thead>
+   <tbody>
+       {% for data in user_data %}
+      <tr>
+         <th scope="row">{{data.stock_symbol|upper}}</th>
+         <td>{{data.number_shares}}</td>
+         <td>{{data.purchase_price}}</td>
+         <td>{{ data.purchase_time}} </td>
+      </tr>
+       {% endfor %}
+   </tbody>
+</table>
+{% endblock %}

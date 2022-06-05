@@ -1,0 +1,50 @@
+body
+{
+    font-family : Arial;
+}
+.black_white
+{
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight:100;
+    line-height: 2.5;
+    margin: 5;
+    text-align: center;
+    
+}
+.header
+{
+    color : white;
+    box-sizing: border-box;
+    text-align : center;
+    padding: 10px;
+    font-size: 30px;
+}
+a
+{
+    color: white;
+}
+
+img
+{
+    width: auto;
+    height : auto;
+}
+p
+{
+    text-align :center;
+}
+.bulled_list
+{
+    text-align:left;
+}
+.question
+{
+    text-align :left;
+    color : white;
+    font-size: 2rem;
+    font-weight:100;
+    line-height: 2.5;
+    margin: 5;
+}

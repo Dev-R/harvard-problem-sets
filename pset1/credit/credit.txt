@@ -1,0 +1,144 @@
+#include<stdio.h>
+#include<cs50.h>
+
+long get_card_number_length();
+bool verify_credit_card();
+
+int main()
+{
+// num will be used as a multiplier of 10, this is a part of my own algorithm to acess any digit in the card.
+long user_card_number = 4786704002032489;
+long num = 10;
+//
+//long user_card_number = get_long("Number: ");
+// find how many digits is the card 
+int user_card_number_length = get_card_number_length(user_card_number);
+// for simplicity
+int card_length =  user_card_number_length;
+// an array to told the card numbers
+int digit_num[16];
+// verifying the length of the card 
+bool card_status = verify_credit_card(card_length);
+// check if the card is fake or not if so -> terminate 
+if (card_status)
+{
+exit(0);
+}
+// storing the card digits to an array
+for (int i = card_length - 1; i >= 0; i-- )
+{
+if ( i == card_length + 1)
+{
+digit_num[i] = user_card_number % num  ;
+}
+else
+{
+digit_num[i] = (user_card_number % num) / (num / 10); 
+}
+
+num *=10;
+//digit_num[i] = user_card_number % 
+}
+}
+//printf("%lli", user_card_number);
+
+
+
+
+bool verify_credit_card(int card_length)
+{
+// if the card in not legit exit
+if (card_length < 13 || card_length > 16)
+{
+return true;
+}
+// if the card is legit continue
+else
+{
+return false;
+}
+}
+
+
+long get_card_number_length(long card_number)
+{
+int counter = 0;
+long number = card_number;
+while(number != 0)
+{
+number = number / 10;
+counter++;
+}
+return counter;
+
+}
+
+
+
+
+
+/*
+
+
+
+
+int main(void)
+{
+/*
+int digit_1, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10,
+digit_11, digit_12, digit_13, digit_14, digit_15, digit_16; 
+
+long long user_card_number = get_long("Number: ");
+
+digit_15 = (user_card_number % 100) / 10;
+
+printf("%i", digit_15);
+
+// get user card number
+// creating an array with a sizr of the card number length
+int digit_num[card_length];
+// num will be used as a multiplier of 10, this is a part of my own algorithm to acess any digit in the card.
+int num = 10;
+//
+long user_card_number = get_long("Number: ");
+// find how many digits is the card 
+int user_card_number_length = get_card_number_length(user_card_number);
+// for simplicity
+int card_length =  user_card_number_length; 
+// verifying the length of the card 
+bool card_status = verify_credit_card(card_length);
+// check if the card is fake or not if so -> terminate 
+if (card_status)
+{
+exit();
+}
+// storing the card digits to an array
+for (int i = card_length; i >= card_length; i-- )
+{
+if ( i == card_length)
+{
+digit_num[i] = user_card_number % num  ;
+}
+else
+{
+digit_num[i] = (user_card_number % num) / (num / 10); 
+}
+
+num *=10;
+//digit_num[i] = user_card_number % 
+}
+//printf("%lli", user_card_number);
+
+
+
+}
+/*
+int main()
+{
+long user_card_number = 4786704002032489;
+int user_card_number_length = get_card_number_length(user_card_number);
+
+printf("Number of digits: %i", user_card_number_length);
+}
+
+*/
